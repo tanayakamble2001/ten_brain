@@ -12,7 +12,7 @@ class Contacts(models.Model):
 class Blog(models.Model):
     blog_title=models.TextField()
     blog_description=models.TextField()
-    blog_image = models.CharField(blank=True, null=True)
+    blog_image = models.CharField(max_length=255,blank=True, null=True)
     created_at = models.DateField(default=datetime.now)
     updated_at = models.DateField(default=datetime.now)
     

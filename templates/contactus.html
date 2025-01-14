@@ -52,31 +52,38 @@
                     <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
                     </div>
                 {% endif %}
-                <form action="/contactus" method="post" autocomplete="off">
-                    {% csrf_token %}
+                <form action="https://api.web3forms.com/submit" method="post" autocomplete="off">
+                    <!-- {% csrf_token %} -->
+                    <input type="hidden" name="access_key" value="409183b1-7986-46ad-95bd-bdfcb69392e5">
                     <div class="mb-3">
                         <label for="exampleInputName" class="form-label">Your Name</label>
-                        <input type="text" name="uname" class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+                        <input type="text" name="name" class="form-control" id="exampleInputName" required>
+                        <!-- <input type="text" name="uname" class="form-control" id="exampleInputName" aria-describedby="emailHelp"> -->
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" name="uemail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" required>
+                        <!-- <input type="email" name="uemail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Mobile</label>
-                        <input type="number" name="umobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="phone" name="phone" class="form-control" id="exampleInputEmail1" required>
+                        <!-- <input type="number" name="umobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputCountry" class="form-label">Country</label>
-                        <input type="text" name="ucountry" class="form-control" id="exampleInputCountry" aria-describedby="emailHelp">
+                        <input type="text" name="country" class="form-control" id="exampleInputCountry" required>
+                        <!-- <input type="text" name="ucountry" class="form-control" id="exampleInputCountry" aria-describedby="emailHelp"> -->
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputMessage" class="form-label">Message</label>
-                        <textarea class="form-control" name="umessage" id="exampleInputMessage" aria-describedby="emailHelp"></textarea>
-                        <!-- <input type="email" name="uemail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                        <textarea name="message" class="form-control" id="exampleInputMessage" required></textarea>
+                        <!-- <textarea class="form-control" name="umessage" id="exampleInputMessage" aria-describedby="emailHelp"></textarea> -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     </div>
-                      
                       <button type="submit" class="btn btn-warning" style="background-color: #ff9800 !important;">Send Message</button>
+                      <!-- <button type="submit" class="btn btn-warning" style="background-color: #ff9800 !important;">Send Message</button> -->
+                      <div id="result"></div>
                 </form>
             </div>
             <div class="col-sm-4"></div>
@@ -115,4 +122,44 @@
 
     </div>
     <!--main end-->
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+        
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
+          result.innerHTML = "Please wait..."
+        
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function() {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
+        });
+        </script>
     {% endblock 'main' %}

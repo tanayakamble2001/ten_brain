@@ -76,52 +76,53 @@ def refund_policy(request):
     return render(request,'refund_policy.html')
 
 def index(request):
-    context={}
-    if request.method=='POST':
-        uname=request.POST['uname']
-        umail=request.POST['uemail']
-        umob=request.POST['umobile']
-        # ucountry = request.POST['ucountry']
-        umsg=request.POST['umessage']
-        # print(uname,'-',umail,'-',umob,'-',umsg)
-        u=Contacts.objects.create(name=uname,email=umail,mobile=umob,message=umsg)        
-        u.save()
+    # context={}
+    # if request.method=='POST':
+    #     uname=request.POST['uname']
+    #     umail=request.POST['uemail']
+    #     umob=request.POST['umobile']
+    #     # ucountry = request.POST['ucountry']
+    #     umsg=request.POST['umessage']
+    #     # print(uname,'-',umail,'-',umob,'-',umsg)
+    #     u=Contacts.objects.create(name=uname,email=umail,mobile=umob,message=umsg)        
+    #     u.save()
 
-        html_content = render_to_string(
-            "my_email.html",
-            context={"my_variable": 42},
-        )
-        text_content = strip_tags(html_content)
-        # Then, create a multipart email instance.
-        msg = EmailMultiAlternatives(
-            "Submitted your query successfully",
-            text_content,
-            "debadritapaul76@gmail.com",
-            [umail],
-            headers={"List-Unsubscribe": "<mailto:unsub@example.com>"},
-        )
+    #     html_content = render_to_string(
+    #         "my_email.html",
+    #         context={"my_variable": 42},
+    #     )
+    #     text_content = strip_tags(html_content)
+    #     # Then, create a multipart email instance.
+    #     msg = EmailMultiAlternatives(
+    #         "Submitted your query successfully",
+    #         text_content,
+    #         "debadritapaul76@gmail.com",
+    #         [umail],
+    #         headers={"List-Unsubscribe": "<mailto:unsub@example.com>"},
+    #     )
 
-        # Lastly, attach the HTML content to the email instance and send.
-        msg.attach_alternative(html_content, "text/html")
-        # print(msg)
-        msg.send()
+    #     # Lastly, attach the HTML content to the email instance and send.
+    #     msg.attach_alternative(html_content, "text/html")
+    #     # print(msg)
+    #     msg.send()
 
 
-        # msg="We will contact you soon"
-        # send_mail(
-        #     "Submitted your query successfully",
-        #     msg,
-        #     "debadritapaul76@gmail.com",
-        #     [umail],
-        #     fail_silently=False,
-        # ) 
+    #     # msg="We will contact you soon"
+    #     # send_mail(
+    #     #     "Submitted your query successfully",
+    #     #     msg,
+    #     #     "debadritapaul76@gmail.com",
+    #     #     [umail],
+    #     #     fail_silently=False,
+    #     # ) 
         
-        context['success_msg']='Your Query is successfully send to us.We will contact you soon'
-        return render(request,'index.html',context)
-    else:
-        return render(request,'index.html')
+    #     context['success_msg']='Your Query is successfully send to us.We will contact you soon'
+    #     return render(request,'index.html',context)
+    # else:
+    return render(request,'index.html')
     
-    # return render(request,'index.html')
+def submit(request):
+    return render(request,'index.html')
 
 def ten_brain_eeg_flexcap(request):
     context={}
@@ -248,83 +249,83 @@ def ten_brain_eeg_headband(request):
  
 
 def contactus(request):
-    context={}
-    if request.method=='POST':
-        uname=request.POST['uname']
-        umail=request.POST['uemail']
-        umob=request.POST['umobile']
-        ucountry = request.POST['ucountry']
-        umsg=request.POST['umessage']
-        # print(uname,'-',umail,'-',umob,'-',umsg)
-        u=Contacts.objects.create(name=uname,email=umail,mobile=umob,message=umsg,country = ucountry)        
-        u.save()
+#     context={}
+#     if request.method=='POST':
+#         uname=request.POST['uname']
+#         umail=request.POST['uemail']
+#         umob=request.POST['umobile']
+#         ucountry = request.POST['ucountry']
+#         umsg=request.POST['umessage']
+#         # print(uname,'-',umail,'-',umob,'-',umsg)
+#         u=Contacts.objects.create(name=uname,email=umail,mobile=umob,message=umsg,country = ucountry)        
+#         u.save()
 
-        html_content = render_to_string(
-            "my_email.html",
-            context={"my_variable": 42},
-        )
-        text_content = strip_tags(html_content)
-        # Then, create a multipart email instance.
-        msg = EmailMultiAlternatives(
-            "Submitted your query successfully",
-            text_content,
-            "debadritapaul76@gmail.com",
-            [umail],
-            headers={"List-Unsubscribe": "<mailto:unsub@example.com>"},
-        )
+#         html_content = render_to_string(
+#             "my_email.html",
+#             context={"my_variable": 42},
+#         )
+#         text_content = strip_tags(html_content)
+#         # Then, create a multipart email instance.
+#         msg = EmailMultiAlternatives(
+#             "Submitted your query successfully",
+#             text_content,
+#             "debadritapaul76@gmail.com",
+#             [umail],
+#             headers={"List-Unsubscribe": "<mailto:unsub@example.com>"},
+#         )
 
-        # Lastly, attach the HTML content to the email instance and send.
-        msg.attach_alternative(html_content, "text/html")
-        # print(msg)
-        msg.send()
+#         # Lastly, attach the HTML content to the email instance and send.
+#         msg.attach_alternative(html_content, "text/html")
+#         # print(msg)
+#         msg.send()
 
 
-        # msg="We will contact you soon"
-        # send_mail(
-        #     "Submitted your query successfully",
-        #     msg,
-        #     "debadritapaul76@gmail.com",
-        #     [umail],
-        #     fail_silently=False,
-        # ) 
+#         # msg="We will contact you soon"
+#         # send_mail(
+#         #     "Submitted your query successfully",
+#         #     msg,
+#         #     "debadritapaul76@gmail.com",
+#         #     [umail],
+#         #     fail_silently=False,
+#         # ) 
         
-        context['success_msg']='Your Query is successfully send to us.We will contact you soon'
-        return render(request,'contactus.html',context)
-    else:
-        return render(request,'contactus.html')
+#         context['success_msg']='Your Query is successfully send to us.We will contact you soon'
+#         return render(request,'contactus.html',context)
+#     else:
+    return render(request,'contactus.html')
     
     
 def submit_subscription(request):
-    context={}
-    if request.method=='POST':
-        umail=request.POST['uemail']
-        page_url = request.POST['page_url']
+#     context={}
+#     if request.method=='POST':
+#         umail=request.POST['uemail']
+#         page_url = request.POST['page_url']
         
-        u=Contacts.objects.create(email=umail)        
-        u.save()
+#         u=Contacts.objects.create(email=umail)        
+#         u.save()
 
-        html_content = render_to_string(
-            "my_email.html",
-            context={"my_variable": 42},
-        )
-        text_content = strip_tags(html_content)
-        # Then, create a multipart email instance.
-        msg = EmailMultiAlternatives(
-            "Submitted your subscribing successfully",
-            text_content,
-            "debadritapaul76@gmail.com",
-            headers={"List-Unsubscribe": "<mailto:unsub@example.com>"},
-        )
+#         html_content = render_to_string(
+#             "my_email.html",
+#             context={"my_variable": 42},
+#         )
+#         text_content = strip_tags(html_content)
+#         # Then, create a multipart email instance.
+#         msg = EmailMultiAlternatives(
+#             "Submitted your subscribing successfully",
+#             text_content,
+#             "debadritapaul76@gmail.com",
+#             headers={"List-Unsubscribe": "<mailto:unsub@example.com>"},
+#         )
 
-        # Lastly, attach the HTML content to the email instance and send.
-        msg.attach_alternative(html_content, "text/html")
-        # print(msg)
-        msg.send()
+#         # Lastly, attach the HTML content to the email instance and send.
+#         msg.attach_alternative(html_content, "text/html")
+#         # print(msg)
+#         msg.send()
         
-        context['success_msg']='Your email is successfully subscribed to us.We will contact you soon'
-        url = "/"+page_url
-        return redirect(url)
-    else:
-        return render(request,'contactus.html')
+#         context['success_msg']='Your email is successfully subscribed to us.We will contact you soon'
+#         url = "/"+page_url
+#         return redirect(url)
+#     else:
+    return render(request,'contactus.html')
     
     
