@@ -46,8 +46,8 @@
 .containers-main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 70px;
-  /* padding: 59px; */
+  gap: 30px;
+padding: 59px; 
 }
 
 .card {
@@ -179,32 +179,154 @@
     <!-- Search Bar -->
     <!-- <div class="search-bar">
         <input type="text" class="form-control" placeholder="Search blog by title...">
-    </div> -->
+    </div> 
 
     <!-- Blog Cards -->
     <main class="container containers-main">
-        {% for b in blogs %}
-        <a href="/blog_view/{{b.id}}" style="text-decoration: none;">
-            <div class="card">
-                <div class="card-header">
-                    <img src="{{b.blog_image}}" alt="Tesla Cybertruck">
-                </div>
-                <div class="card-body">
-                    <p>{{b.blog_title | safe | striptags | truncatewords_html:9}}</p>
-                    <div class="user">
-                        <div class="user-info">
-                            <small>Published on: {{b.created_at | date:'d F, Y' }}</small>
-
-                        </div>
+     
+      <div class="card">
+        <a href="blog_view" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+            <div class="card-header">
+                <img src="https://www.neuphony.com/blog/imgs/b1.webp" alt="Tesla Cybertruck">
+            </div>
+            <div class="card-body">
+                <p>How Personality Affects Cognitive Abilities: Insights from EEG Research</p>
+                <div class="user">
+                    <div class="user-info">
+                        <small>Published on: 2 October, 2024 - 6 min read</small>
                     </div>
                 </div>
             </div>
         </a>
-        {% endfor %}
+    </div>
+    <div class="card">
+      <a href="https://example.com/stress-anxiety" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+          <div class="card-header">
+              <img src="https://www.neuphony.com/blog/imgs/b2.webp" alt="Hot air balloons">
+          </div>
+          <div class="card-body">
+              <p>The Neuroscience Behind Stress and Anxiety</p>
+              <div class="user">
+                  <div class="user-info">
+                      <small>Published on: 2 October, 2024 - 8 min read</small>
+                  </div>
+              </div>
+          </div>
+      </a>
+  </div>
+  <div class="card">
+      <a href="https://example.com/hypothalamus-health" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+          <div class="card-header">
+              <img src="https://www.neuphony.com/blog/imgs/b3.webp" alt="Cityscape">
+          </div>
+          <div class="card-body">
+              <p>How Hypothalamus Acts As a Tiny Bodyguard with a Big Impact on Health</p>
+              <div class="user">
+                  <div class="user-info">
+                      <small>Published on: 2 October, 2021 - 7 min read</small>
+                  </div>
+              </div>
+          </div>
+      </a>
+  </div>
+  
 
+  <div class="card">
+    <a href="https://example.com/eeg-research" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+        <div class="card-header">
+            <img src="https://www.neuphony.com/blog/imgs/b4.webp" alt="Tesla Cybertruck">
+        </div>
+        <div class="card-body">
+            <p>How Personality Affects Cognitive Abilities: Insights from EEG Research</p>
+            <div class="user">
+                <div class="user-info">
+                    <small>Published on: 2 October, 2024 - 6 min read</small>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="card">
+    <a href="https://example.com/stress-anxiety" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+        <div class="card-header">
+            <img src="https://www.neuphony.com/blog/imgs/b5.webp" alt="Hot air balloons">
+        </div>
+        <div class="card-body">
+            <p>The Neuroscience Behind Stress and Anxiety</p>
+            <div class="user">
+                <div class="user-info">
+                    <small>Published on: 2 October, 2024 - 8 min read</small>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="card">
+    <a href="https://example.com/hypothalamus-health" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+        <div class="card-header">
+            <img src="https://www.neuphony.com/blog/img/b6/b61.webp" alt="Cityscape">
+        </div>
+        <div class="card-body">
+            <p>How Hypothalamus Acts As a Tiny Bodyguard with a Big Impact on Health</p>
+            <div class="user">
+                <div class="user-info">
+                    <small>Published on: 2 October, 2021 - 7 min read</small>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="card">
+  <a href="https://www.neuphony.com/blog/imgs/b7.webp" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+      <div class="card-header">
+          <img src="https://www.neuphony.com/blog/imgs/b7.webp" alt="Tesla Cybertruck">
+      </div>
+      <div class="card-body">
+          <p>How Personality Affects Cognitive Abilities: Insights from EEG Research</p>
+          <div class="user">
+              <div class="user-info">
+                  <small>Published on: 2 October, 2024 - 6 min read</small>
+              </div>
+          </div>
+      </div>
+  </a>
+</div>
+<div class="card">
+  <a href="https://example.com/stress-anxiety" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+      <div class="card-header">
+          <img src="https://www.neuphony.com/blog/img/b8/b82.webp" alt="Hot air balloons">
+      </div>
+      <div class="card-body">
+          <p>The Neuroscience Behind Stress and Anxiety</p>
+          <div class="user">
+              <div class="user-info">
+                  <small>Published on: 2 October, 2024 - 8 min read</small>
+              </div>
+          </div>
+      </div>
+  </a>
+</div>
+<div class="card">
+  <a href="https://example.com/hypothalamus-health" target="_blank" style="display: block; text-decoration: none; color: inherit;">
+      <div class="card-header">
+          <img src="https://www.neuphony.com/blog/imgs/b9.webp" alt="Cityscape">
+      </div>
+      <div class="card-body">
+          <p>How Hypothalamus Acts As a Tiny Bodyguard with a Big Impact on Health</p>
+          <div class="user">
+              <div class="user-info">
+                  <small>Published on: 2 October, 2021 - 7 min read</small>
+              </div>
+          </div>
+      </div>
+  </a>
+</div>
+        
          <!-- Footer Section -->
 
     </main>
+    
  
     <div class="subscription-section mt-4">
       <h2>New from Ten Brain Research?</h2>

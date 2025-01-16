@@ -9,7 +9,7 @@ urlpatterns = [
     path('ten-brain-eeg-headband', views.ten_brain_eeg_headband),
     path('aboutus', views.aboutus),
     path('blogs', views.blogs),
-    path('blog_view/<pk>', views.blog_view),
+    path('blog_view', views.blog_view),
     path('contactus',views.contactus),
     path('synapse',views.synapse),
     path('flexcap-setup',views.flexcap_setup),

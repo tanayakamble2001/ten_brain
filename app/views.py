@@ -191,6 +191,9 @@ def blog_view(request, pk):
 
 def aboutus(request):
     return render(request,'aboutus.html')
+def blog_view(request):
+    return render(request,'blog_view.html')
+
 
 def diy_neuroscience_kits_exg_synapse(request):
     return render(request,'diy_neuroscience_kits_exg_synapse.html')

@@ -2,74 +2,246 @@
 {% block 'main' %}
 {% load static %}
 <!--main start-->
-    <!--Banner start-->
-    <div class="bg-white text-black">
-        <div class="row therapy-simplified mt-4">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <div class="row">
-                    <div class="col-sm-12 mb-2">
-                        <a href="/blogs" class="blog-goback" style="text-decoration: none;color: black;font-weight: bolder;">
-                            <<--Go Back
-                        </a>
-                    </div>
-                    <div class="col-sm-12 mt-2">
-                        
-                            {{blog.blog_title | safe }}
-                        
-                    </div>
-                    <div class="col-sm-12 mt-2">
-                        <a href="/blogs" style="color:#ffc107; text-decoration: none; margin-left: 17%;">
-                            <!-- <img src="https://github.com/Debadrita-rgb/ten_brain/blob/main/static/assets/logo.jpeg" height="30px"> -->
-                            Ten Brain Research Team</a>
-                        |
-                        <span style="font-style: italic; font-weight: bold;font-weight: 600;font-size: smaller;">Published on {{blog.created_at | date:'F d, Y' }}</span>
-                    </div>
-                    <div class="col-sm-12 mt-2">
-                        <img src="{{blog.blog_image}}" width="100%" style="border-radius: 20px;">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-sm-12 mt-4 mb-4">
-                        <div class="blog-description">{{blog.blog_description | safe }}</div>
-                    </div>
-                </div>
-            <div class="col-sm-2"></div>
-        </div>
-        </div>
-        <div class="row mt-4 mb-4">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <p style="text-align: center; font-size: x-large;"><b>Related Products</b></p>
-                    </div>
-                </div>
-                <div class="row">
-                    {% for b in blog_all %}
-                    <div class="col-sm-4">
-                        <a href="/blog_view/{{b.id}}" style="text-decoration: none;">
-                            <div class="card">
-                                <div class="card-header">
-                                    <img src="{{ b.blog_image }}" alt="Tesla Cybertruck" height="193px" style="width: -webkit-fill-available;">
-                                </div>
-                                <div class="card-body">
-                                    <p>{{b.blog_title | safe | striptags | truncatewords_html:6}}</p>
-                                    <div class="user">
-                                        <div class="user-info">
-                                            <small>Published on: {{b.created_at | date:'d F, Y' }}</small>
+<style>
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .blog-container {
+        width: 100%;
+        max-width: 600px;
+    }
+    .blog-goback {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }
+    .blog-metadata {
+        color: #ffc107;
+        text-decoration: none;
+        
+    }
+    .blog-image {
+    width: 100%; /* Makes the image fill its parent container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 20px;
+}
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+.image-container {
+    width: 100%; /* Makes sure the container takes full width */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+}
+
+@media (max-width: 768px) {
+    .blog-image {
+        max-width: 100%; /* Ensures images don't stretch too wide on smaller screens */
+    }
+}
+
+
+    .related-products-title {
+        text-align: center;
+        font-size: x-large;
+    }
+    .card-header img {
+        width: 100%;
+        height: 193px;
+        object-fit: cover;
+    }
+
+    .table-of-contents {
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        margin-top: 30px;
+    }
+    .table-of-contents a {
+        color: #020202;
+    }
+    .table-of-contents a:hover {
+        text-decoration: underline;
+    }
+    .table-of-contents ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .table-of-contents ul li {
+        margin-bottom: 7px;
+        
+        border-bottom: 1px solid #ccc;
+    }
+
+    .blog-description {
+        font-size: 0.9rem;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+   
+
+
+    
+</style>
+</head>
+<body>
+<div class="bg-white text-black content-wrapper">
+    <div class="blog-container">
+        <div class="mt-4">
+            <div class="mb-2">
+                <a href="/blogs" class="blog-goback">&lt;-- Go Back</a>
+            </div>
+            <h6>How Personality Affects Cognitive Abilities: Insights from EEG Research</h6>
+            <div class="mt-2">
+                <a href="/blogs" class="blog-metadata">Ten Brain Research Team</a>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">Published on October 5, 2024</span>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">5 Mins Read</span>
+            </div>
+            <!--Image-->
+            <div class="mt-2 image-container">
+                <img src="https://www.neuphony.com/blog/img/b1/b1.webp" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+            </div>
+            <div class="mt-4 table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction" style="text-decoration:none;"> INTRODUCTION</a></li>
+                    <li><a href="#what-is-personality" style="text-decoration:none;">  What is Personality?</a></li>
+                    <li><a href="#personality-traits-and-cognition" style="text-decoration:none;">Personality Traits and Cognition</a></li>
+                    <li><a href="#what-is-eeg" style="text-decoration:none;" >What is EEG and How Can It Measure Personality Type?</a></li>
+                    <li><a href="#understanding-eeg-signatures"style="text-decoration:none;" >Understanding EEG Signatures</a></li>
+                    <li><a href="#personality-and-cognition" style="text-decoration:none;">Personality and Cognitive Correlates of EEG Signatures</a></li>
+                    <li><a href="#conclusion" style="text-decoration:none;">Conclusion</a></li>
+                    <li><a href="#references" style="text-decoration:none;">References</a></li>
+                </ul>
+            </div>
+            <div class="mt-4 mb-4 blog-description">
+                <h4 id="introduction">INTRODUCTION</h4>
+                <p>Have you ever wondered how your unique personality affects how you think and perform tasks? Our personality doesn’t just give shape to our social life; rather, it also intervenes in the way we think. In this blog, we’ll explore how personality affects cognitive abilities, discuss the role of EEG in studying this relationship, and explore how EEG data can help us better understand our brains. We’ll also investigate how EEG wearables and Cognitive and Behavioral Therapy(CBT) can be used to improve cognitive performance.</p>
+                
+                <h4 id="what-is-personality">What is Personality?</h4>
+                <p>Personality is a combination of characteristics and traits that affect how we think, feel, and behave. Specifically, it includes characteristics like temperament, attitudes, and behavior that remain consistent over time. Furthermore, to describe different aspects of personality, one can use the Big Five personality traits — openness, conscientiousness, extraversion, agreeableness, and neuroticism (OCEAN).</p>
+
+                <p>These personality traits are useful in not just predicting what majorly constitutes the behavior of different individuals but also their cognitive skills.</p>
+                
+                <h4 id="personality-traits-and-cognition">Personality Traits and Cognition</h4>
+                <p>The study of Roslan et al. Each personality trait is associated with a specific psychological skill, as shown by (2017). Here is a closer look at the OCEAN traits and examples of how they affect emotional abilities:</p>
+
+                <ul>
+                    <li><strong>Openness:</strong> This trait includes traits such as imagination, research, and a wide variety of interests. People who are more open tend to be more creative and open to new experiences. For example, they may struggle with tasks that require creative thinking and problem-solving.</li>
+                    <li><strong>Conscientiousness:</strong> This trait includes high levels of thoughtfulness, good impulse control, and goal-directed behaviors. People with a good conscience organize and pay attention to details. They tend to work well in business.</li>
+                    <li><strong>Extraversion:</strong> This trait is characterized by excitability, sociability, talkativeness, assertiveness, and high amounts of emotional expressiveness. Extraverts are likely to excel in social settings and tasks that involve teamwork and communication, thanks to their outgoing nature.</li>
+                    <li><strong>Agreeableness:</strong> This personality scale includes such traits as trust, altruism, kindness, and love. Agreeable individuals tend to work best in collaborative environments and in jobs that require empathy and cooperation such as customer service and caring roles.</li>
+                    <li><strong>Neuroticism:</strong> This trait is characterized by sadness, mood swings, and emotional instability. Individuals with severe cognitive impairment may struggle with stress and anxiety, which can affect their performance on tasks that require emotional stability and calmness such as solving problems or making critical decisions.</li>
+                </ul>
+
+                <p>Thus, these traits influence how we design and perform cognitive tasks, making it essential to understand personality to predict cognitive performance. Such analyses aid in more accurate prediction of behavioral responses, emotional abilities, mental strengths and weaknesses, and proficiency levels in specific cognitive skills.</p>
+
+                <h4 id="what-is-eeg">What is EEG and How Can It Measure Personality Type?</h4>
+                <p>One of the methods to observe physiological responses of the brain is to record its electrical activity using a non-invasive technique known as electroencephalography or EEG. By placing electrodes on the scalp, EEG measures spontaneous electrical activity in the brain over time. This approach provides valuable insights into brain function and researchers widely use it in neuroscience research. Lee et al. (2020) demonstrated that EEG can quantitatively predict personality traits. Their study found that brief EEG recordings could provide accurate predictions of an individual’s personality, using patterns in brain activity that correspond with different personality dimensions. Similarly, Chi et al. (2005) described how to analyze EEG data to understand brain oscillation patterns associated with personality traits. Knyazev (2006) further investigated EEG correlations across personality types, focusing on how patterns in the EEG data correspond to specific personality traits.</p>
+            
+             <div class="mt-2 image-container">
+                <img src="https://www.neuphony.com/blog/img/b1/b2.webp" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+            </div>
+             <!-- Brain Waves Section -->
+    <h4 id="brain-waves">BRAIN WAVES: Understanding EEG Signatures</h4>
+    <p>
+        A typical EEG recording looks like a wave pattern plotted over a time window. These wave patterns, however complex to an untrained eye, are analyzed by experts to derive information from the brain. The wavy pattern is generated from the aforementioned electrical activity and thus is constituted of useful physiological data, specifically from the cortical regions of the brain. These data can provide insights into the brain’s health, its response to certain stimuli, and any deviations from the standard activity pattern. A growing body of research reveals typical EEG signatures that strongly correlate with mood, emotional states, and cognitive skills. The analysis of these ‘signatures’ provides insights into the neurophysiological mechanisms underlying behavior and personality.
+    </p>
+    <p>
+        An EEG recording is a combination of different wave patterns that the brain produces across various frequency ranges. During a typical analysis, the EEG data is first transformed into its constituent brain waves. This step brings down the complexity significantly and helps begin looking for specific signatures. Each brain wave or frequency band is associated with different cognitive functions. Following are the commonly studied brain waves and their behavioral and cognitive correlates:
+    </p>
+    <ul>
+        <li><strong>Alpha Waves (8-12 Hz):</strong> Alpha waves are associated with a calm and alert state of mind. These are a conspicuous EEG signature during relaxation and states of low alertness.</li>
+        <li><strong>Beta Waves (12-30 Hz):</strong> Beta waves are associated with active thinking and focused cognitive activity. These dominate in tasks that require concentration and high alertness.</li>
+        <li><strong>Gamma Waves (30-100 Hz):</strong> Gamma waves are the fastest brain waves and are associated with higher levels of cognitive function, including perception and problem-solving.</li>
+        <li><strong>Delta Waves (0.5-4 Hz):</strong> These are slow brain waves, usually associated with the deep sleep stage. These are essential for healing and regeneration.</li>
+        <li><strong>Theta Waves (4-8 Hz):</strong> Theta waves are associated with light sleep, relaxation, and concentration. These also play a role in memory formation and creation.</li>
+    </ul>
+
+             
+    <div class="mt-2 image-container">
+        <img src="https://www.neuphony.com/blog/img/b1/b3.webp" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+    </div>
+
+    <h4 id="frontal-cortex">FRONTAL CORTEX: Personality and Cognitive Correlates of EEG Signatures</h4>
+    <p>
+        Once the EEG wave pattern is transformed into different frequency bands, researchers can analyze how these bands correlate with various cognitive processes and personality traits. A number of studies have focused on the relationship between personality dimensions and EEG signatures, revealing specific patterns of brain activity associated with different personality traits across different regions of the brain. Past research has cataloged standard patterns and commonly observed deviations along with their cognitive correlates. We outline a few examples of these research findings below.
+    </p>
+    <h5>Frontal EEG Asymmetry and Extraversion</h5>
+    <p>
+        Frontal EEG asymmetry reflects differences in electrical activity between the left and right frontal regions of the brain. These differences are associated with emotional and cognitive processes.
+    </p>
+    <p>
+        Hagemann et al. (1999) found that individuals with more positive emotions and higher levels of extraversion (one of the OCEAN traits) showed greater left frontal brain activity. Kuper et al. (2019) confirmed this connection, indicating that traits like extraversion and approach-related behaviors are linked to left frontal asymmetry.
+    </p>
+    <h5>Emotional Sensitivity</h5>
+    <p>
+        EEG can provide us with emotional aspects of personality. Stenberg et al. (1992) found that people with high emotional sensitivity exhibit different EEG patterns. Zhao et al. (2017) showed that EEG can predict personality traits based on emotional responses, revealing a strong relationship between emotions and brain activity.
+    </p>
+    <h5>Reactive Social Behavior</h5>
+    <p>
+        Personality traits are also implicated in social behavior. According to Knyazev et al. (2019), some EEG patterns are associated with social responsiveness. This study suggests that EEG can help us understand how personality traits influence interpersonal communication.
+    </p>
+
+    <!-- Conclusion Section -->
+    <h4 id="conclusion">Conclusion</h4>
+    <p>
+        Understanding the impact of personality on cognitive abilities is crucial for optimizing cognitive task performance and improving therapeutic outcomes. EEG technology provides a powerful tool for studying the relationship between personality and brain activity, offering insights into how different personality traits influence cognitive processes.
+    </p>
+    <p>
+        In conclusion, the interplay between personality and cognitive abilities is complex and multifaceted. Leveraging EEG data, researchers can gain a deeper understanding of this relationship, paving the way for innovative therapeutic strategies and personalized cognitive enhancement techniques. As technology advances, the integration of EEG wearables in research and therapy will continue to uncover new insights into the intricate connections between personality, brain activity, and cognitive performance.
+    </p>
+
+    <!-- References Section -->
+    <h4 id="references">References</h4>
+    <ul>
+        <li>Roslan, N. S., Izhar, L. I., Faye, I., Saad, M. N. M., Sivapalan, S., & Rahman, M. A. (2017). Review of EEG and ERP studies of extraversion personality for baseline and cognitive tasks. <em>Personality and Individual Differences</em>, 119, 323-332.</li>
+        <li>Li, W., Wu, C., Hu, X., Chen, J., Fu, S., Wang, F., & Zhang, D. (2020). Quantitative personality predictions from a brief EEG recording. <em>IEEE Transactions on Affective Computing</em>, 13(3), 1514-1527.</li>
+        <li>Chi, S. E., Park, C. B., Lim, S. L., Park, E. H., Lee, Y. H., Lee, K. H., … & Kim, H. T. (2005). EEG and personality dimensions: A consideration based on the brain oscillatory systems. <em>Personality and Individual Differences</em>, 39(3), 669-681.</li>
+        <li>Knyazev, G. G. (2006). EEG correlates of personality types. <em>Netherlands Journal of Psychology</em>, 62(2), 78-87.</li>
+        <li>Hagemann, D., Naumann, E., Lürken, A., Becker, G., Maier, S., & Bartussek, D. (1999). EEG asymmetry, dispositional mood and personality. <em>Personality and Individual Differences</em>, 27(3), 541-568.</li>
+        <li>Kuper, N., Käckenmester, W., & Wacker, J. (2019). Resting frontal EEG asymmetry and personality traits: A meta-analysis. <em>European Journal of Personality</em>, 33(2), 154-175.</li>
+        <li>Wall, T. L., Schuckit, M. A., Mungas, D., & Ehlers, C. L. (1990). EEG alpha activity and personality traits. <em>Alcohol</em>, 7(5), 461-464.</li>
+        <li>Stenberg, G. (1992). Personality and the EEG: Arousal and emotional arousability. <em>Personality and Individual Differences</em>, 13(10), 1097-1113.</li>
+        <li>Zhao, Y., Wei, Y., & Liu, H. (2017). EEG correlates of emotional responses: Implications for personality assessment. <em>Neuropsychologia</em>, 106, 1-12.</li>
+    </ul>
+            </div>
+            <div class="mt-4 d-flex justify-content-between">
+                <div class="card" style="width: 18rem; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 1 Title</h5>
+                        <p class="card-text">Short description about the first card content.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
                     </div>
-                    {% endfor %}
+                </div>
+                <div class="card" style="width: 18rem; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 2 Title</h5>
+                        <p class="card-text">Short description about the second card content.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 3 Title</h5>
+                        <p class="card-text">Short description about the third card content.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-2"></div>
+           
         </div>
+        
     </div>
+
+    
+</div>
 
     
 {% endblock 'main' %}
