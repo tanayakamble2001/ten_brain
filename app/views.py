@@ -182,6 +182,17 @@ def blog_view(request, pk):
     blog_one = Blog.objects.get(id=pk)
     context['blog'] = blog_one
 
+def blog1(request):
+    return render(request, 'blog1.html')
+
+def blog2(request):
+    return render(request, 'blog2.html')
+
+def blog3(request):
+    return render(request, 'blog3.html')
+
+def blog4(request):
+    return render(request, 'blog4.html')
     #get and show all blog
     blog_all = Blog.objects.all().exclude(id=pk)[:3]
     context['blog_all'] = blog_all
