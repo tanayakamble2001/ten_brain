@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+<style>
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .blog-container {
+        width: 100%;
+        max-width: 600px;
+    }
+    .blog-goback {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }
+    .blog-metadata {
+        color: #ffc107;
+        text-decoration: none;
+    }
+    .blog-image {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+    }
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    @media (max-width: 768px) {
+        .blog-image {
+            max-width: 100%;
+        }
+    }
+    .table-of-contents {
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        margin-top: 30px;
+    }
+    .table-of-contents a {
+        color: #020202;
+    }
+    .table-of-contents a:hover {
+        text-decoration: underline;
+    }
+    .table-of-contents ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .table-of-contents ul li {
+        margin-bottom: 7px;
+        border-bottom: 1px solid #ccc;
+    }
+    .blog-description {
+        font-size: 0.9rem;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+</style>
+
+<div class="bg-white text-black content-wrapper">
+    <div class="blog-container">
+        <div class="mt-4">
+            <div class="mb-2">
+                <a href="/blogs" class="blog-goback" target="_self">&lt;-- Go Back</a>
+            </div>
+            <h6>The Impact of Nutrition on Brain Function</h6>
+            <div class="mt-2">
+                <a href="/blogs" class="blog-metadata">Neuroscience</a>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">Published on January 25, 2025</span>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">12 Mins Read</span>
+            </div>
+            <!-- Image Section -->
+            <div class="mt-2 image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2ZWIZnoI4xSMWbvjPMfnRUKGAm8XaVBaow&s" 
+                     alt="Nutrition and Brain Function" 
+                     class="blog-image">
+            </div>
+            <div class="mt-4 table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#nutrients-for-brain-health">Nutrients for Brain Health</a></li>
+                    <li><a href="#the-brain-gut-connection">The Brain-Gut Connection</a></li>
+                    <li><a href="#impact-of-nutrition-on-cognitive-function">Impact of Nutrition on Cognitive Function</a></li>
+                    <li><a href="#nutrition-and-mental-health">Nutrition and Mental Health</a></li>
+                    <li><a href="#practical-tips-for-brain-health">Practical Tips for Brain Health</a></li>
+                    <li><a href="#future-research-directions">Future Research Directions</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </div>
+            <div class="mt-4 mb-4 blog-description">
+                <h4 id="introduction">Introduction</h4>
+                <p>Nutrition plays a crucial role in brain function, affecting memory, mood, and cognitive performance. The brain is highly metabolic and requires specific nutrients to operate optimally. Understanding the impact of diet on brain health is essential for improving mental performance and preventing neurological diseases.</p>
+
+                <h4 id="nutrients-for-brain-health">Nutrients for Brain Health</h4>
+                <p>Several key nutrients support brain function:</p>
+                <ul>
+                    <li><strong>Omega-3 Fatty Acids:</strong> Found in fish and flaxseeds, omega-3s are essential for brain structure and function, particularly in areas related to memory and learning.</li>
+                    <li><strong>Antioxidants:</strong> Foods rich in antioxidants, like berries and leafy greens, protect the brain from oxidative stress and aging.</li>
+                    <li><strong>Vitamins and Minerals:</strong> Vitamin D, B-vitamins, magnesium, and zinc play crucial roles in neurotransmitter function and cognitive health.</li>
+                </ul>
+
+                <h4 id="the-brain-gut-connection">The Brain-Gut Connection</h4>
+                <p>Recent research highlights the strong connection between the gut and the brain. The gut microbiome, which contains trillions of bacteria, influences brain function and mental health:</p>
+                <ul>
+                    <li><strong>Gut Health:</strong> A balanced gut microbiome supports cognitive function, mood regulation, and immune responses.</li>
+                    <li><strong>Dietary Fiber:</strong> High-fiber foods, like vegetables and whole grains, promote healthy gut bacteria, which in turn affect brain health.</li>
+                </ul>
+
+                <h4 id="impact-of-nutrition-on-cognitive-function">Impact of Nutrition on Cognitive Function</h4>
+                <p>Nutrition influences various cognitive functions, including:</p>
+                <ul>
+                    <li><strong>Memory:</strong> Nutrients like omega-3s and antioxidants enhance synaptic plasticity and long-term memory retention.</li>
+                    <li><strong>Focus and Attention:</strong> A balanced diet, particularly rich in complex carbohydrates and proteins, supports steady energy levels, improving concentration.</li>
+                </ul>
+
+                <h4 id="nutrition-and-mental-health">Nutrition and Mental Health</h4>
+                <p>A healthy diet is also crucial for mental health:</p>
+                <ul>
+                    <li><strong>Depression and Anxiety:</strong> Diets rich in omega-3s and vitamins may reduce the risk of mood disorders, while deficiencies in certain nutrients can contribute to anxiety and depression.</li>
+                    <li><strong>Neuroinflammation:</strong> Inflammatory foods, like processed sugars and trans fats, may exacerbate symptoms of mental health disorders, while anti-inflammatory foods support brain health.</li>
+                </ul>
+
+                <h4 id="practical-tips-for-brain-health">Practical Tips for Brain Health</h4>
+                <p>To optimize brain function, consider incorporating these dietary tips:</p>
+                <ul>
+                    <li><strong>Eat a Balanced Diet:</strong> Focus on a variety of nutrient-rich foods, including fruits, vegetables, whole grains, and lean proteins.</li>
+                    <li><strong>Stay Hydrated:</strong> Proper hydration supports cognitive function and prevents fatigue.</li>
+                    <li><strong>Limit Processed Foods:</strong> Minimize the intake of foods high in refined sugars and unhealthy fats, which can impair brain health.</li>
+                </ul>
+
+                <h4 id="future-research-directions">Future Research Directions</h4>
+                <p>Future research will likely explore the precise mechanisms by which diet influences brain function, the impact of specific micronutrients, and the development of dietary interventions for preventing cognitive decline and mental health issues.</p>
+
+                <h4 id="conclusion">Conclusion</h4>
+                <p>Nutrition is fundamental to maintaining brain health and optimizing cognitive function. By focusing on nutrient-rich, balanced diets, we can improve memory, mental clarity, and overall well-being. Informed dietary choices are not only crucial for physical health but also for our cognitive and emotional states.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock 'main' %}

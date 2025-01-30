@@ -193,7 +193,16 @@ def aboutus(request):
     return render(request,'aboutus.html')
 def blog_view(request):
     return render(request,'blog_view.html')
-
+def blog_view2(request):
+    return render(request,'blog_view2.html')
+def blog_view6(request):
+    return render(request,'blog_view6.html')
+def blog_view7(request):
+    return render(request,'blog_view7.html')
+def blog_view8(request):
+    return render(request,'blog_view8.html')
+def blog_view9(request):
+    return render(request,'blog_view9.html')
 
 def diy_neuroscience_kits_exg_synapse(request):
     return render(request,'diy_neuroscience_kits_exg_synapse.html')
