@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+<!--main start-->
+<style>
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .blog-container {
+        width: 100%;
+        max-width: 600px;
+    }
+    .blog-goback {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }
+    .blog-metadata {
+        color: #ffc107;
+        text-decoration: none;
+        
+    }
+    .blog-image {
+    width: 100%; /* Makes the image fill its parent container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 20px;
+}
+
+.image-container {
+    width: 100%; /* Makes sure the container takes full width */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+}
+
+@media (max-width: 768px) {
+    .blog-image {
+        max-width: 100%; /* Ensures images don't stretch too wide on smaller screens */
+    }
+}
+
+
+    .related-products-title {
+        text-align: center;
+        font-size: x-large;
+    }
+    .card-header img {
+        width: 100%;
+        height: 193px;
+        object-fit: cover;
+    }
+
+    .table-of-contents {
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        margin-top: 30px;
+    }
+    .table-of-contents a {
+        color: #020202;
+    }
+    .table-of-contents a:hover {
+        text-decoration: underline;
+    }
+    .table-of-contents ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .table-of-contents ul li {
+        margin-bottom: 7px;
+        
+        border-bottom: 1px solid #ccc;
+    }
+
+    .blog-description {
+        font-size: 0.9rem;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+   
+
+
+    
+</style>
+</head>
+<body>
+<div class="bg-white text-black content-wrapper">
+    <div class="blog-container">
+        <div class="mt-4">
+            <div class="mb-2">
+                <a href="/blogs" target="_self" class="blog-goback">&lt;-- Go Back</a>
+            </div>
+            <h6>Tech Innovation That Can Revolutionize Mental Health Space in 2024</h6>
+            <div class="mt-2">
+                <a href="/blogs" class="blog-metadata">Ten Brain Research Team</a>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">Published on October 5, 2024</span>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">5 Mins Read</span>
+            </div>
+            <!--Image-->
+            <div class="mt-2 image-container">
+                <img src="https://res.cloudinary.com/tbmg/c_scale,w_400,f_auto,q_auto/v1706831998/sites/mdb/articles/2024/features/MDB-0224-p8_fig1.jpg" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+            </div>
+            <div class="mt-4 table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#mental-health-tracking-takes-center-stage" style="text-decoration:none;">Mental health tracking takes center stage</a></li>
+                    <li><a href="#bringing-cognitive-mental-wellness-to-work" style="text-decoration:none;">Bringing cognitive mental wellness to work</a></li>
+                    <li><a href="#tech-mental-health-a-double-edged-sword?" style="text-decoration:none;">Tech + Mental Health, a double-edged sword?</a></li>
+                    <li><a href="#teamwork-makes-the-dream-work" style="text-decoration:none;" >Teamwork makes the dream work</a></li>
+                    <li><a href="#finding-zen-in-the-digital-age"style="text-decoration:none;" >Finding Zen in the digital age</a></li>
+                    <li><a href="#shining a light on mental health" style="text-decoration:none;">Shining a light on mental health</a></li>
+                    <li><a href="#references" style="text-decoration:none;">References</a></li>
+                    
+                </ul>
+            </div>
+            <div class="mt-4 mb-4 blog-description">
+                <h4 id="mental-health-tracking-takes-center-stage">Mental health tracking takes center stage</h4>
+                <p>In recent years, mental health tracking has emerged as a powerful tool for understanding and managing emotional well-being. With the growing prevalence of mental health challenges worldwide, the need for proactive, personalized solutions has never been greater. Advances in technology, such as wearable devices, mobile apps, and AI-driven tools, now allow individuals to monitor their mood, stress levels, and behavioral patterns in real time. By collecting and analyzing this data, mental health tracking not only empowers individuals to identify triggers and trends but also facilitates early intervention and improved communication with healthcare providers. As mental health takes centre stage globally, tracking technologies are revolutionizing the way we approach emotional wellness, making it more accessible and actionable for everyone.</p>
+                
+                <h4 id="bringing-cognitive-mental-wellness-to-work">Bringing cognitive mental wellness to work</h4>
+                <p>As workplaces evolve, cognitive mental wellness is becoming a cornerstone of healthy, productive environments. With the increasing awareness of how stress, burnout, and mental fatigue impact performance, organizations are prioritizing strategies to support employees' mental well-being. Cognitive mental wellness focuses on enhancing mental clarity, emotional resilience, and overall brain health, helping individuals manage workplace challenges more effectively. From mindfulness programs and flexible work arrangements to mental health training and resources, fostering a culture of cognitive wellness not only boosts productivity but also strengthens employee satisfaction and retention. By bringing mental wellness to the forefront, businesses can create a supportive atmosphere where both people and organizations thrive.</p>
+
+                
+                <h4 id="tech-mental-health-a-double-edged-sword?">Tech + Mental Health, a double-edged sword?</h4>
+                <p>The relationship between technology and mental health is a topic of growing concern and interest in today’s digital age. On one hand, technology offers unprecedented tools to support mental well-being—through apps for meditation, therapy platforms, and wearable devices that monitor stress levels. These innovations have made mental health resources more accessible and personalized than ever before. On the other hand, excessive screen time, social media comparisons, and information overload can contribute to anxiety, depression, and feelings of isolation. As we integrate technology into every aspect of life, the question arises: Can we truly leverage it to enhance mental health, or does it pose a hidden risk? Understanding the benefits and challenges of this dynamic relationship is crucial as we navigate the intersection of tech and mental wellness.
+
+                </p>
+
+                
+
+                <h4 id="teamwork-makes-the-dream-work">Teamwork makes the dream work</h4>
+                <p>The phrase "teamwork makes the dream work" underscores the power of collaboration in achieving shared goals. In any organization, project, or community, the ability to work together efficiently and harmoniously is key to success. When individuals combine their unique skills, perspectives, and strengths, they create an environment where creativity flourishes, productivity soars, and challenges become more manageable. Teamwork fosters a sense of belonging, accountability, and mutual support, making it easier to tackle even the most complex problems. In today’s fast-paced world, where success often depends on collective effort, teamwork is more important than ever in turning dreams into reality.
+
+
+
+                </p>
+                
+             <div class="mt-2 image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYetJgsxm8bZoJMg_JdbmhfmjjgUK691XGRg&s" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+            </div>
+             <!-- Brain Waves Section -->
+    <h4 id="finding-zen-in-the-digital-age">Finding Zen in the digital age</h4>
+    <p>In a world dominated by screens, notifications, and constant connectivity, finding moments of peace and clarity can feel increasingly difficult. Yet, the pursuit of "Zen"—a state of calm, balance, and mindfulness—is more important than ever in today’s fast-paced digital age. With the rise of technology, there is also a growing movement to use digital tools in ways that enhance mental well-being, such as meditation apps, mindfulness podcasts, and virtual wellness communities. However, striking a balance between embracing the benefits of digital innovation and protecting our mental peace requires intentional effort. This journey toward finding Zen in the digital age is about navigating the noise, slowing down, and cultivating moments of presence and serenity amidst the hustle.
+
+
+        
+    </p>
+    
+
+             
+    <div class="mt-2 image-container">
+        <img src="data:image/jpeg;base64,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" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+    </div>
+
+    <h4 id="shining a light on mental health">Shining a light on mental health</h4>
+    <p>
+        For too long, mental health has been shrouded in stigma and silence, leaving countless individuals to suffer in isolation. However, the conversation around mental well-being is finally changing, as more people recognize the importance of mental health in overall wellness. Shining a light on mental health means breaking down the barriers that prevent open dialogue, encouraging individuals to seek help and offering support without judgment. By increasing awareness, we can dismantle misconceptions, foster empathy, and create a culture where mental health is treated with the same care and attention as physical health. This shift is not just about offering resources, but also about changing how we view and talk about mental wellness, ultimately paving the way for better care, understanding, and healing for all.
+
+
+    </p>
+    
+
+    <!-- Conclusion Section -->
+    <h4 id="references">References</h4>
+    
+    <ul>
+        <li>National Institutes of Health (.gov), “Mobile Technology Shows Promise for Helping People Manage Mental Health Conditions,” accessed March 29, 2024 https://www.nimh.nih.gov/health/topics/technology-and-the-future-of-mental-health-treatment</li>
+        <li>Jessica A. Turner et al., “The relationship between social media use and mental health: A review of the evidence,” Computers in Human Behavior, vol. 136, 2022 https://www.cureus.com/articles/31508-social-media-use-and-its-connection-to-mental-health-a-systematic-review</li>
+        <li>Lynda D. Dzurenda et al., “Delivery of Cognitive Behavioral Therapy for Depression via Videoconferencing: A Randomized Controlled Noninferiority Trial,” JAMA Psychiatry, vol. 74, no. 11, pp. 1090-1098, 2017 https://jamanetwork.com/journals/jamapsychiatry/article-abstract/2806606</li>
+    </ul>
+    
+   
+            </div>
+            
+           
+        </div>
+        
+    </div>
+
+    
+</div>
+
+    
+{% endblock 'main' %}

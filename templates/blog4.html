@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+<!--main start-->
+<style>
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .blog-container {
+        width: 100%;
+        max-width: 600px;
+    }
+    .blog-goback {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }
+    .blog-metadata {
+        color: #ffc107;
+        text-decoration: none;
+        
+    }
+    .blog-image {
+    width: 100%; /* Makes the image fill its parent container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 20px;
+}
+
+.image-container {
+    width: 100%; /* Makes sure the container takes full width */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+}
+
+@media (max-width: 768px) {
+    .blog-image {
+        max-width: 100%; /* Ensures images don't stretch too wide on smaller screens */
+    }
+}
+
+
+    .related-products-title {
+        text-align: center;
+        font-size: x-large;
+    }
+    .card-header img {
+        width: 100%;
+        height: 193px;
+        object-fit: cover;
+    }
+
+    .table-of-contents {
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        margin-top: 30px;
+    }
+    .table-of-contents a {
+        color: #020202;
+    }
+    .table-of-contents a:hover {
+        text-decoration: underline;
+    }
+    .table-of-contents ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .table-of-contents ul li {
+        margin-bottom: 7px;
+        
+        border-bottom: 1px solid #ccc;
+    }
+
+    .blog-description {
+        font-size: 0.9rem;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+   
+
+
+    
+</style>
+</head>
+<body>
+<div class="bg-white text-black content-wrapper">
+    <div class="blog-container">
+        <div class="mt-4">
+            <div class="mb-2">
+                <a href="/blogs" target="_self" class="blog-goback">&lt;-- Go Back</a>
+            </div>
+            <h6>5 Mindful Practices to Keep Your Amygdala Calm, Anxiety-Free, and Healthy!</h6>
+            <div class="mt-2">
+                <a href="/blogs" class="blog-metadata">Ten Brain Research Team</a>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">Published on October 5, 2024</span>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">5 Mins Read</span>
+            </div>
+            <!--Image-->
+            <div class="mt-2 image-container">
+                <img src="https://www.neuphony.com/blog/imgs/b3.webp" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+            </div>
+            <div class="mt-4 table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#understanding-the-amygdala" style="text-decoration:none;"> Understanding the Amygdala</a></li>
+                    <li><a href="#amygdala-exercises" style="text-decoration:none;"> Amygdala Exercises</a></li>
+                    <li><a href="#mindfulness-meditation" style="text-decoration:none;">Mindfulness Meditation</a></li>
+                    <li><a href="#deep-breathing-techniques" style="text-decoration:none;" >Deep Breathing Techniques</a></li>
+                    <li><a href="#progressive-muscle-relaxation"style="text-decoration:none;" >Progressive Muscle Relaxation</a></li>
+                    <li><a href="#conclusion" style="text-decoration:none;">Conclusion</a></li>
+                </ul>
+            </div>
+            <div class="mt-4 mb-4 blog-description">
+                <h4 id="understanding-the-amygdala">Understanding the Amygdala</h4>
+                <p>The amygdala is a small, almond-shaped structure in the brain that plays a big role in how we process emotions, especially fear and stress. Often referred to as the brain's "alarm system," the amygdala is responsible for detecting threats and triggering the body’s fight-or-flight response. It works closely with other regions, such as the hypothalamus and prefrontal cortex, to regulate emotional reactions and decision-making. While its primary function is to keep us safe, an overactive amygdala can contribute to heightened anxiety, stress, and even conditions like post-traumatic stress disorder (PTSD). Understanding the amygdala’s role offers valuable insights into how our brains handle emotions, helping us better manage stress and build emotional resilience.
+
+                </p>
+                
+                <h4 id="amygdala-exercises">Amygdala Exercises</h4>
+                <p>The amygdala, the brain’s emotional processing hub, plays a central role in managing stress, fear, and emotional reactions. While the amygdala’s fight-or-flight response is essential for survival, chronic activation due to stress or anxiety can lead to overactivity, which may negatively impact emotional well-being. Fortunately, there are exercises and techniques that can help calm the amygdala, retrain emotional responses, and promote a greater sense of control. Practices such as mindfulness meditation, deep breathing, and grounding techniques have been shown to reduce amygdala activity over time. Additionally, activities that engage the prefrontal cortex—like journaling or cognitive behavioral exercises—can help balance the amygdala’s influence. By incorporating these exercises into daily life, individuals can build resilience, reduce stress, and foster emotional balance.
+
+                </p>
+
+              
+                
+                <h4 id="mindfulness-meditation">Mindfulness Meditation</h4>
+                <p>Mindfulness meditation is a powerful practice that helps individuals cultivate a sense of presence and awareness in the moment. Rooted in ancient traditions, mindfulness involves focusing on the here and now, often through techniques like observing the breath, body sensations, or thoughts without judgment. Research has shown that regular mindfulness meditation can reduce stress, improve emotional regulation, and even rewire the brain by calming overactivity in the amygdala and strengthening the prefrontal cortex. This practice not only helps manage anxiety and depression but also promotes overall well-being by fostering clarity, focus, and resilience in the face of life’s challenges. Accessible and adaptable, mindfulness meditation has become a cornerstone of modern mental health practices.
+
+                </p>
+
+                
+
+
+                <h4 id="deep-breathing-techniques">Deep Breathing Techniques</h4>
+                <p>Deep breathing techniques are powerful and accessible tools for reducing stress, enhancing focus, and improving emotional well-being. By consciously controlling your breath, these techniques help calm the nervous system, balance oxygen and carbon dioxide levels in the blood, and activate the parasympathetic nervous system, which is responsible for relaxation and recovery. Popular methods such as diaphragmatic breathing (belly breathing), box breathing, and the 4-7-8 technique are designed to slow the breath and promote mindfulness. Practicing deep breathing not only provides immediate stress relief but also builds long-term resilience by improving heart rate variability and reducing the production of stress hormones like cortisol. Whether you're seeking a quick reset during a busy day or a way to manage chronic stress, deep breathing techniques offer a simple yet transformative solution for mind and body harmony.
+
+                </p>
+                
+             <div class="mt-2 image-container">
+                <img src="https://www.mindsconnect.org/uploads/1/2/4/0/124026165/published/deep-breathing.webp?1608062935" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+            </div>
+             <!-- Brain Waves Section -->
+    <h4 id="progressive-muscle-relaxation">Progressive Muscle Relaxation</h4>
+    <p>
+        Progressive Muscle Relaxation (PMR) is a relaxation technique that helps reduce stress and tension in your body. It involves tensing different muscle groups—like your hands, shoulders, or legs—one at a time, holding the tension for a few seconds, and then slowly releasing it. This helps you notice the difference between how tension and relaxation feel, making it easier to relax your body and calm your mind. It’s an easy and effective way to feel more relaxed, improve sleep, and manage stress or anxiety.
+    </p>
+    
+    
+
+             
+    <div class="mt-2 image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm8War0S2qcTwt0CKHbRn7LVmVrLC1RVgvRQ&s" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+    </div>
+
+    <h4 id="conclusion">Conclusion</h4>
+    <p>
+        Caring for your amygdala is essential for maintaining emotional health and well-being. You can nurture a calm and healthy amygdala by incorporating mindful practices such as deep breathing, amygdala meditation, and progressive muscle relaxation into your daily life. Start integrating these practices into your routine today to support your emotional resilience and overall well-being. Remember, small changes can make a big difference in promoting emotional balance and well-being.
+
+
+    </p>
+    
+    
+            </div>
+            
+           
+        </div>
+        
+    </div>
+
+    
+</div>
+
+    
+{% endblock 'main' %}

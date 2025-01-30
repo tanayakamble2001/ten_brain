@@ -994,12 +994,13 @@ iframe{
                   </div>
                   <!-- <div class="clearfix"></div> -->
                   <div class="col-sm-6 get-in">
-                    <form action="/ten-brain-eeg-headband" method="post" autocomplete="off">
+                    <form action="https://api.web3forms.com/submit" method="post" autocomplete="off">
                       {% if success_msg %}
                           <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
                           </div>
                       {% endif %}
-                        {% csrf_token %}
+                        <!-- {% csrf_token %} -->
+                        <input type="hidden" name="access_key" value="409183b1-7986-46ad-95bd-bdfcb69392e5">
                       <div class="form-group">
                         <label for="exampleInputEmail1" class="label-text">Your Name</label>
                         <input type="text" class="form-control text-form" name="uname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your name">
