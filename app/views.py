@@ -193,6 +193,18 @@ def blog3(request):
 
 def blog4(request):
     return render(request, 'blog4.html')
+
+def blog5(request):
+    return render(request, 'blog5.html')
+
+def blog6(request):
+    return render(request, 'blog6.html')
+
+def blog7(request):
+    return render(request, 'blog7.html')
+
+def blog8(request):
+    return render(request, 'blog8.html')
     #get and show all blog
     blog_all = Blog.objects.all().exclude(id=pk)[:3]
     context['blog_all'] = blog_all

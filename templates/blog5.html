@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+<!--main start-->
+<style>
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .blog-container {
+        width: 100%;
+        max-width: 600px;
+    }
+    .blog-goback {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }
+    .blog-metadata {
+        color: #ffc107;
+        text-decoration: none;
+        
+    }
+    .blog-image {
+    width: 100%; /* Makes the image fill its parent container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 20px;
+}
+
+.image-container {
+    width: 100%; /* Makes sure the container takes full width */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+}
+
+@media (max-width: 768px) {
+    .blog-image {
+        max-width: 100%; /* Ensures images don't stretch too wide on smaller screens */
+    }
+}
+
+
+    .related-products-title {
+        text-align: center;
+        font-size: x-large;
+    }
+    .card-header img {
+        width: 100%;
+        height: 193px;
+        object-fit: cover;
+    }
+
+    .table-of-contents {
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        margin-top: 30px;
+    }
+    .table-of-contents a {
+        color: #020202;
+    }
+    .table-of-contents a:hover {
+        text-decoration: underline;
+    }
+    .table-of-contents ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .table-of-contents ul li {
+        margin-bottom: 7px;
+        
+        border-bottom: 1px solid #ccc;
+    }
+
+    .blog-description {
+        font-size: 0.9rem;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+   
+
+
+    
+</style>
+</head>
+<body>
+<div class="bg-white text-black content-wrapper">
+    <div class="blog-container">
+        <div class="mt-4">
+            <div class="mb-2">
+                <a href="/blogs" class="blog-goback" target="_self">&lt;-- Go Back</a>
+            </div>
+            <h6>Genetics and the Brain: Genetic Contributions to Mental Health</h6>
+            <div class="mt-2">
+                <a href="/blogs" class="blog-metadata">Neuroscience</a>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">Published on January 25, 2025</span>
+                |
+                <span style="font-style: italic; font-weight: bold; font-size: smaller;">15 Mins Read</span>
+            </div>
+            <!--Image-->
+            <div class="mt-2 image-container">
+                <img src="https://www.neuphony.com/blog/img/b36/b361.webp" alt="Blog Image" class="blog-image" style="height: 300px; width: 600px;">
+            </div>
+            <div class="mt-4 table-of-contents">
+                <h4>Table of Contents</h4>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#genetics-and-brain-development">Genetics and Brain Development</a></li>
+                    <li><a href="#genetic-factors-in-mental-health">Genetic Factors in Mental Health</a></li>
+                    <li><a href="#epigenetics-and-environment">Epigenetics and Environmental Influences</a></li>
+                    <li><a href="#genome-wide-studies">Genome-Wide Association Studies (GWAS)</a></li>
+                    <li><a href="#genetic-disorders">Genetic Disorders and Mental Health</a></li>
+                    <li><a href="#future-research">Future Research Directions</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </div>
+            <div class="mt-4 mb-4 blog-description">
+
+                <h4 id="introduction">Introduction</h4>
+                <p>Genetics plays a pivotal role in shaping brain structure, function, and susceptibility to mental health conditions. Advances in genomics have revealed how genetic variations influence the risk of disorders such as depression, schizophrenia, and bipolar disorder.</p>
+
+                <h4 id="genetics-and-brain-development">Genetics and Brain Development</h4>
+                <p>During prenatal and early postnatal development, genes guide the formation of neural circuits, synaptic connections, and overall brain architecture. Mutations or disruptions in these genes can lead to developmental delays or neurological conditions.</p>
+                <ul>
+                    <li><strong>Key Genes:</strong> Genes like BDNF (Brain-Derived Neurotrophic Factor) influence neural growth and plasticity.</li>
+                    <li><strong>Neurogenesis:</strong> The creation of new neurons, influenced by genetic instructions, is essential for learning and memory.</li>
+                </ul>
+
+                <h4 id="genetic-factors-in-mental-health">Genetic Factors in Mental Health</h4>
+                <p>Genetic predisposition accounts for a significant portion of the risk for mental health conditions. For instance:</p>
+                <ul>
+                    <li><strong>Schizophrenia:</strong> Associated with genetic variations in over 100 loci, including genes related to dopamine regulation.</li>
+                    <li><strong>Depression:</strong> Linked to genes that influence serotonin pathways and stress responses.</li>
+                    <li><strong>Bipolar Disorder:</strong> Tied to variations in genes affecting mood regulation and circadian rhythms.</li>
+                </ul>
+
+                <h4 id="epigenetics-and-environment">Epigenetics and Environmental Influences</h4>
+                <p>Epigenetics refers to changes in gene expression caused by environmental factors without altering the DNA sequence. Stress, trauma, and lifestyle choices can modify how genes are expressed, influencing mental health outcomes.</p>
+                <ul>
+                    <li><strong>DNA Methylation:</strong> Alters gene activity and is implicated in anxiety and PTSD.</li>
+                    <li><strong>Histone Modification:</strong> Impacts chromatin structure and gene expression, affecting brain plasticity.</li>
+                </ul>
+
+                <h4 id="genome-wide-studies">Genome-Wide Association Studies (GWAS)</h4>
+                <p>GWAS has revolutionized the understanding of mental health genetics by identifying specific genetic markers associated with psychiatric conditions. These studies analyze entire genomes to find common variants linked to disorders.</p>
+
+                <h4 id="genetic-disorders">Genetic Disorders and Mental Health</h4>
+                <p>Certain genetic disorders directly impact mental health:</p>
+                <ul>
+                    <li><strong>Fragile X Syndrome:</strong> Causes intellectual disabilities and is associated with autism spectrum disorder.</li>
+                    <li><strong>Huntington's Disease:</strong> A hereditary condition leading to cognitive decline and emotional disturbances.</li>
+                    <li><strong>Down Syndrome:</strong> Linked to developmental delays and increased risk of Alzheimer's disease.</li>
+                </ul>
+
+                <h4 id="future-research">Future Research Directions</h4>
+                <p>Emerging technologies such as CRISPR gene editing and single-cell RNA sequencing hold promise for unraveling the complexities of genetics and mental health. Personalized medicine approaches may lead to targeted treatments based on an individual's genetic profile.</p>
+
+                <h4 id="conclusion">Conclusion</h4>
+                <p>Understanding the genetic contributions to mental health is essential for advancing diagnostics, prevention, and treatment. By integrating genetics, epigenetics, and environmental factors, researchers can develop comprehensive strategies to improve mental health outcomes globally.</p>
+
+    
+            </div>
+            
+           
+        </div>
+        
+    </div>
+
+    
+</div>
+
+    
+{% endblock 'main' %}
