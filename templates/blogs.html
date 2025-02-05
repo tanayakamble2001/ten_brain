@@ -47,7 +47,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
- padding: 59px; 
+ padding: 0px; 
 }
 
 .card {
@@ -100,14 +100,23 @@
   }
 }
 @media (max-width: 320px) {
-    .containers-main{
+    .containers-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 0px !important;
     }
-    .card{
-        width: 74%;
+    .card {
+        width: 90%;
+        max-width: 280px;
+    }
+    .card-header img {
+        height: 150px; /* Adjust height for small screens */
+    }
+    .card-body p {
+        font-size: 0.9rem;
     }
 }
-
 .subscription-section {
   text-align: center;
   background-color: #f1f1f1 !important;
