@@ -522,9 +522,10 @@
                           <div id="alerts" class="alert alert-success" role="alert">{{success_msg}}
                           </div>
                       {% endif %}  
-                <form action="/ten_brain_eeg_flexcap" method="post" style="text-align: left;" autocomplete="off">
+                  <form action="https://api.web3forms.com/submit" method="post" autocomplete="off">
                   
-                    {% csrf_token %}
+                    <!-- {% csrf_token %} -->
+                    <input type="hidden" name="access_key" value="409183b1-7986-46ad-95bd-bdfcb69392e5">
                     <div class="form-group" >
                         <label for="name" ><b >Your Name</b></label>
                       <input type="text" id="name" class="form-control mb-2" name="uname" placeholder="Enter Your Name" />
